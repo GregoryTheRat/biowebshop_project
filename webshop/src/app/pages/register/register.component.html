@@ -1,0 +1,11 @@
+<div class="main-component">
+    <div class="div-flex-center">
+    <h1>Register</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div><label for="email">Email: </label><input type="text" formControlName="email"/></div>
+    <div><label for="username">Username: </label><input type="text" formControlName="username"/></div>
+    <div><label for="password">Password: </label><input type="password" formControlName="password"/></div>
+    <div><button type="submit" mat-raised-button><mat-icon>fingerprint</mat-icon>Register</button></div>
+    </form>   
+    </div>    
+</div>

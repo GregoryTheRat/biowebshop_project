@@ -1,17 +1,15 @@
-<div class="first-div">
-    <h1>Hello this is the shop</h1>
-</div>
+<div class="main-component">
+    <h1>Welcome to the shop</h1>
 
-<div>
-    <p>
-        Here will be some category menus that open product listings
-    </p>
-    <p>Example:</p>
-    <button mat-button [matMenuTriggerFor]="productsMenu">Products</button>
-    <mat-menu overlapTrigger="true" #productsMenu="matMenu">
-        <button mat-menu-item>Fruits</button>
-        <button mat-menu-item>Vegetables</button>
-        <button mat-menu-item>Meat</button>
-    </mat-menu>
 
-</div>
+    <div>
+        <button mat-button [matMenuTriggerFor]="productsMenu">Product types</button>
+        <mat-menu overlapTrigger="true" #productsMenu="matMenu">
+            <button mat-menu-item>Plants</button>
+            <button mat-menu-item>Animal products</button>
+        </mat-menu>
+    </div>
+    <div>
+      <app-product-tabs></app-product-tabs>
+    </div>
+</div>  
