@@ -18,7 +18,7 @@ export class LoginComponent {
   
 
   constructor(private router: Router, private authService: AuthService) { }
-
+  //TODO: FIX, add validation?
   onSubmit(){
     console.log(this.loginForm.value);
     this.authService.login(this.loginForm.controls['email'].value , this.loginForm.controls['password'].value).then(cred => {
