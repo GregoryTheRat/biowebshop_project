@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "webshop:build:production",
+            "firebaseProject": "webfejl-project-2023-e0e55",
+            "firebaseHostingSite": "webfejl-project-2023-e0e55"
+          }
         }
       }
     }

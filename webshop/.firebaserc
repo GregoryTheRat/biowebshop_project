@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-project-2023-e0e55": {
+      "hosting": {
+        "webshop": [
+          "webfejl-project-2023-e0e55"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-project-2023-e0e55"
+  }
+}
