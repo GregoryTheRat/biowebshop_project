@@ -1,7 +1,9 @@
 export interface Product {
+    id: string;
     type: string;
+    subtype: string;
     name: string;
     description: string;
-    value: string;
-    amount: string;
+    kg_price: number;
+    advertiser: string;
 }

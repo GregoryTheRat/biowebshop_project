@@ -2,10 +2,10 @@
     <h1>Welcome to the shop</h1>
 
 
-    <div>
+    <div><!--TODO: SELECT INSTEAD OF MENU-->
         <button mat-button [matMenuTriggerFor]="productsMenu">Product types</button>
         <mat-menu overlapTrigger="true" #productsMenu="matMenu">
-            <button mat-menu-item>Plants</button>
+            <button mat-menu-item (onClick)="">Plants</button>
             <button mat-menu-item>Animal products</button>
         </mat-menu>
     </div>
