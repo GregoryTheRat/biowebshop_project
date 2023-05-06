@@ -1,10 +1,10 @@
 <div class="main-component">
     <div class="div-flex-center">
     <h1>Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div><label for="email">Email: </label><input type="text" formControlName="email"/></div>
-    <div><label for="password">Password: </label><input type="password" formControlName="password"/></div>
-    <div><button type="submit" mat-raised-button ><mat-icon>input</mat-icon>Login</button></div>
+    <form>
+    <div><mat-label for="email">Email: </mat-label><input type="text" [formControl]="email"/></div>
+    <div><mat-label for="password">Password: </mat-label><input type="password" [formControl]="password"/></div>
+    <div><button type="submit" mat-raised-button (click)="login()" ><mat-icon>input</mat-icon>Login</button></div>
     </form>    
     </div>
 </div>
