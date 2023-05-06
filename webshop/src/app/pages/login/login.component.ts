@@ -9,25 +9,23 @@ import { AuthService } from '../../shared/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  ngOnInit(): void{}
-
- 
-  email: FormControl =  new FormControl('');
-  password: FormControl =  new FormControl('');
+  loginForm: FormGroup = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
 
   constructor(private router: Router, private authService: AuthService) { }
- 
-  async login(){
-    this.authService.login(this.email.value, this.password.value).then(cred =>{
-      console.log("successful login")
-      console.log(cred.user);
-      this.router.navigateByUrl('/');
-    }).catch(error =>{
-      console.log("error");
+
+  ngOnInit(): void {
+
+  }
+
+  onSubmit(){
+    this.authService.login(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value).then(cred => {
+      console.log(cred);
+      this.router.navigateByUrl('/shop');
+    }).catch(error => {
       console.error(error);
     });
   }
-
-
 }
