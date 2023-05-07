@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ShopRoutingModule } from './shop-routing.module';
 import { ShopComponent } from './shop.component';
-import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ProductTabsComponent } from './product-tabs/product-tabs.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -16,8 +16,8 @@ import { ProductTabsComponent } from './product-tabs/product-tabs.component';
   imports: [
     CommonModule,
     ShopRoutingModule,
-    MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule
   ]
 })
 export class ShopModule { }

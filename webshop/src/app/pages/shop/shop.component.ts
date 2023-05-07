@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ShopComponent {
 
+  products = [
+    {value: 'plant-0', viewValue: 'plants'},
+    {value: 'animal-1', viewValue: 'animal product'},
+    {value: 'meat-2', viewValue: 'meat'}
+  ];
+
 }

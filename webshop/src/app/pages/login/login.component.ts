@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.authService.login(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value).then(cred => {
+      console.log("login successful");
       console.log(cred);
-      this.router.navigateByUrl('/shop');
+      //TODO: navigate to home this.router.navigate(['/home']); create home
     }).catch(error => {
       console.error(error);
     });

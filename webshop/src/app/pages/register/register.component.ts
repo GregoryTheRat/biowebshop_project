@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../shared/models/User';
@@ -13,9 +13,9 @@ import { AuthService } from '../../shared/services/auth.service';
 export class RegisterComponent {
 
   signUpForm: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    username: new FormControl(''),
-    password: new FormControl('')
+    email: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
   });
 
   constructor(private router: Router, private authService: AuthService, 
