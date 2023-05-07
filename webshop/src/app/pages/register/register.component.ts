@@ -34,7 +34,7 @@ export class RegisterComponent {
         }).catch(error => {
           console.error(error);
         });
-        this.router.navigateByUrl('/shop');
+        this.router.navigateByUrl('/home');
     }).catch(error => {
       console.error(error);
     });  
