@@ -20,6 +20,10 @@ export class ProductService {
     return this.afs.collection<Product>(this.collectionName).valueChanges(); //OBVSERVABLE
   }
 
+  getByType(type: string){ //.orderBy('name', 'desc') 
+    return this.afs.collection<Product>(this.collectionName, ref => ref.where('type', '==', type)).valueChanges();
+  }
+
   update() {
 
   }

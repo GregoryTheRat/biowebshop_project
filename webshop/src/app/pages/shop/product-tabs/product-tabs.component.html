@@ -1,9 +1,24 @@
 <mat-tab-group animationDuration="1000ms">
-    <mat-tab label="ex.: Dairy/Artisan">ex.: Dairy/Artisan
-    <div>
-        <p>Make these tab-groups into a seperate components</p>
+    <mat-tab *ngFor="let type of subTypes" label="{{type}}">
+    <div *ngFor="let product of productsArray">
+        <div *ngIf="product.subtype == type">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-card-header>
+            <img matCardImage src="">
+            <mat-card-content>
+                <p>{{product.description}}</p>
+                <p>{{product.kg_price}}$ / kg</p>
+            </mat-card-content>
+            <mat-card-actions>
+                    <mat-label>Amount to buy</mat-label>
+                    <input matInput type="number" [(ngModel)]="amount">
+                    <button mat-button (click)="buyProduct(product.id, product.kg_price)">Buy</button>
+              </mat-card-actions>
+        </mat-card>
+        </div>
+        <br>
     </div>
     </mat-tab>
-    <mat-tab label="ex.: Meat">ex.: Meat</mat-tab>
-    <mat-tab label="Third">Content 3</mat-tab>
 </mat-tab-group>

@@ -2,16 +2,16 @@
     <h1>Welcome to the shop</h1>
 
 
-    <div><!--TODO: SELECT INSTEAD OF MENU-->
+    <div>
         <mat-form-field>
-            <mat-select placeholder="product type">
-              <mat-option *ngFor="let product of products" [value]="product.value">
-                {{ product.viewValue }}
+            <mat-select placeholder="product type" [(ngModel)]="selected">
+              <mat-option *ngFor="let type of pTypes" [value]="type.value">
+                {{ type.viewValue }}
               </mat-option>
             </mat-select>
           </mat-form-field>
     </div>
-    <div>
-      <app-product-tabs></app-product-tabs>
+    <div *ngIf="selected">
+      <app-product-tabs [pType]="selected"></app-product-tabs>
     </div>
 </div>  
