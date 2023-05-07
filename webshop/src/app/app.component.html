@@ -4,7 +4,7 @@
     <a mat-raised-button routerLink="/sales">Sales</a>
     <a *ngIf="!(loggedInUser)" mat-raised-button routerLink="/login">Login</a>
     <a *ngIf="loggedInUser" mat-raised-button routerLink="/login" (click)="logout()">Logout</a>
-    <a mat-raised-button routerLink="/register">Register</a>
+    <a *ngIf="!(loggedInUser)" mat-raised-button routerLink="/register">Register</a>
   </div>
 </mat-toolbar-row>
 
