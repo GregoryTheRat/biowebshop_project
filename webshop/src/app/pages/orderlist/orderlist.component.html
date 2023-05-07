@@ -1,0 +1,7 @@
+<div class="main-component">
+    <div class="bg-white">
+    <mat-list role="list" *ngFor="let order of myOrders">
+        <mat-list-item role="listitem">{{order.product_name}} {{order.amount}}kg {{order.cost}}$ <button mat-button (click)="deleteOrder(order.id)"><mat-icon>close</mat-icon></button></mat-list-item>
+    </mat-list>
+    </div>
+</div>

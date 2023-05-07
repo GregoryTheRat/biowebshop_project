@@ -1,7 +1,9 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/shared/models/Product';
+import { OrderService } from 'src/app/shared/services/order.service';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { Order } from 'src/app/shared/models/Order';
 
 @Component({
   selector: 'app-product-tabs',
@@ -16,11 +18,12 @@ export class ProductTabsComponent implements OnChanges{
   productsArray?: Array<Product>;
   subTypes?: Array<String>;
   
+  buyName?: string;
   buyAmount?: number;
   buyId?: string;
   buyCost?: number;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private orderService: OrderService) {
     
   }
 
@@ -49,12 +52,24 @@ export class ProductTabsComponent implements OnChanges{
     });
   }
 
-  buyProduct(id: string, kg_price: number) {
+  buyProduct(id: string, kg_price: number, name: string) {
     if(this.amount != undefined && this.amount > 0){
+    this.buyName = name;
     this.buyId = id;
     this.buyCost = this.amount * kg_price;
     //CREATE ORDER
-    console.log("buying: " + this.buyId + ' ' + this.amount + ' ' + this.buyCost + ' $');
+    const newOrder: Order = {
+      id: '',
+      product_name: this.buyName,
+      user_id:'',
+      amount: this.amount,
+      cost: this.buyCost,
+    }
+    this.orderService.create(newOrder).then(_ => {
+      console.log("Order added successfully");
+    }).catch(error => {
+      console.error(error);
+    });
     this.amount = undefined;
     }
   }

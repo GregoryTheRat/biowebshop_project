@@ -30,7 +30,9 @@ const routes: Routes = [
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
-  }];
+  },
+  { path: 'orders', loadChildren: () => import('./pages/orderlist/orderlist.module').then(m => m.OrderlistModule) },
+  { path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

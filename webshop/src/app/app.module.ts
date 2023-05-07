@@ -26,7 +26,6 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
-
     AngularFireModule.initializeApp(environment.firebase),
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

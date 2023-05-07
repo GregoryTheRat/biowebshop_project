@@ -1,0 +1,7 @@
+<div class="main-component">
+    <h1>Welcome {{newUser.username}}</h1>
+    <form [formGroup]="changeForm"  (ngSubmit)="onSubmit()">
+        <div><mat-label for="username">new username: </mat-label><input type="text" formControlName="username"/></div>
+        <div><button type="submit" mat-raised-button ><mat-icon>input</mat-icon>Update</button></div>
+    </form>  
+</div>

@@ -3,8 +3,11 @@
     <a mat-raised-button routerLink="/shop">Buy Products</a>
     <a mat-raised-button routerLink="/sales">Sales</a>
     <a *ngIf="!(loggedInUser)" mat-raised-button routerLink="/login">Login</a>
+    <a *ngIf="(loggedInUser)" mat-raised-button routerLink="/orders">My Orders</a>
     <a *ngIf="loggedInUser" mat-raised-button routerLink="/login" (click)="logout()">Logout</a>
+    <a *ngIf="loggedInUser" mat-raised-button routerLink="/profile">Profile</a>
     <a *ngIf="!(loggedInUser)" mat-raised-button routerLink="/register">Register</a>
+    <a  mat-raised-button routerLink="/home">Home</a>
   </div>
 </mat-toolbar-row>
 

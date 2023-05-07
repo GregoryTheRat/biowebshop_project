@@ -14,7 +14,7 @@
             <mat-card-actions>
                     <mat-label>Amount to buy</mat-label>
                     <input matInput type="number" [(ngModel)]="amount">
-                    <button mat-button (click)="buyProduct(product.id, product.kg_price)">Buy</button>
+                    <button mat-button (click)="buyProduct(product.id, product.kg_price, product.name)">Buy</button>
               </mat-card-actions>
         </mat-card>
         </div>
